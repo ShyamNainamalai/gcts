@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soundboard Control Panel (90 Cues - Tracked)</title>
+    <style>
+        body {
+            font-family: sans-serif; 
+            padding: 20px; 
+            background-color: #1e1e1e; 
+            color: #ffffff; 
+            text-align: center;
+            /* Disable text selection across the whole app */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        h1 { margin-bottom: 5px; }
+        p { margin-top: 5px; margin-bottom: 20px; color: #ccc; }
+        
+        .section-header {
+            text-align: left; 
+            max-width: 1400px; 
+            margin: 20px auto 10px auto; 
+            font-size: 1.5em; 
+            color: #4CAF50;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+
+        .soundboard-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); 
+            gap: 8px; 
+            max-width: 1400px; 
+            margin: 0px auto 20px auto;
+        }
+        
+        .cue-button {
+            background-color: #333333; color: #ffffff; border: 1px solid #555555; 
+            padding: 10px 5px; font-size: 14px; font-weight: bold; cursor: pointer; 
+            border-radius: 4px; transition: background-color 0.1s;
+            word-wrap: break-word;
+        }
+        .cue-button:hover { background-color: #505050; }
+        .bgm-button { background-color: #3f51b5; } 
+        .meme-button { background-color: #800080; }
+        .esound-button { background-color: #008080; }
+        .ppt-button { background-color: #ff9800; } 
+
+        /* Style for used cues */
+        .used-cue {
+            background-color: #555555 !important;
+            border-color: #DC3545 !important;
+            color: #b0b0b0 !important;
+        }
+
+        /* Essential Control Buttons */
+        #top-controls {
+            display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;
+        }
+        #top-controls button {
+            padding: 10px 20px; border: none; color: white; font-size: 16px; border-radius: 8px; cursor: pointer;
+        }
+        #open-button { background-color: #007bff; }
+        #stop-button { background-color: #dc3545; }
+        #blackout-button { background-color: #555555; }
+        #reset-all-button { background-color: #28a745; }
+
+        /* Notification Toast */
+        #toast {
+            visibility: hidden;
+            min-width: 280px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            border: 2px solid #4CAF50;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        #toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 1400px) {
+            .soundboard-grid {
+                grid-template-columns: repeat(15, 1fr);
+            }
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+    <h1>🎧 GCTS CT Soundboard Control Panel</h1>
+    <p>Used cues are marked with [X]. Click an [X] cue to reset it or re-fire with confirmation.</p>
+    <p>App Owner: Shyam Nainamalai - © All rights reserved. Unauthorized copying, reproduction, or distribution is strictly prohibited.</p>
+    
+    <div id="top-controls">
+        <button id="open-button" onclick="openDisplayWindow()">
+            1. Open Display Window
+        </button>
+        
+        <button id="stop-button" onclick="stopAll()">
+            STOP ALL SOUNDS (Spacebar)
+        </button>
+        
+        <button id="blackout-button" onclick="blackout()">
+            BLACK SCREEN (Key B)
+        </button>
+
+        <button id="reset-all-button" onclick="resetAllCues()">
+            RESET ALL CUES
+        </button>
+    </div>
+
+    <!-- Notification Toast Element -->
+    <div id="toast">Acknowledged: Cue Fired!</div>
+
+    <div class="section-header">Intro/end - Sounds (Short Stings)</div>
+    <div class="soundboard-grid">
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/.mp3', 'assets/images/QR.jpeg')">QR_CODE</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/video/GCTS_Intro.mp4')">GCTS_Intro</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/video/Mothers_day.mp4')">Mother</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/e_sounds/naaready_lawrence.mp3', 'assets/images/logo.jpg')">naready_lrnce</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/e_sounds/annamalai_bgm.mp3', 'assets/images/logo.jpg')">CURTAIN1</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/e_sounds/curtain_kaththi.mp3', 'assets/images/logo.jpg')">CURTAIN2</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/video/intro.mp4')">TIMER</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/e_sounds/.mp3', 'assets/images/logo.jpg')">JUST_LOGO</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/T_Thaai_Vaazhthu.mp3', 'assets/images/TTV.jpg')">T_Thaai_Vaazhthu</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/v_kootam.mp3', 'assets/images/logo.jpg')">V-kootam</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/v-18patti.mp3', 'assets/images/logo.jpg')">v-18patti</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/V-wind-up-vadivelu.mp3', 'assets/images/logo.jpg')">V-wind-up</button>
+    </div>
+    
+    <div class="section-header">Intro Video/Image Cues (1-43)</div>
+    <div class="soundboard-grid">
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT01.mp4')">CT01</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT02.mp4')">CT02</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT03.mp4')">CT03</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT04.mp4')">CT04</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT05.mp4')">CT05</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT06.mp4')">CT06</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT08.mp4')">CT08</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT09.mp4')">CT09</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT12.mp4')">CT12</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT14.mp4')">CT14</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT15.mp4')">CT15</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT16.mp4')">CT16</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT18.mp4')">CT18</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT19.mp4')">CT19</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT22.mp4')">CT22</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT23.mp4')">CT23</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT26.mp4')">CT26</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT27.mp4')">CT27</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT28.mp4')">CT28</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT29.mp4')">CT29</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT30.mp4')">CT30</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT34.mp4')">CT34</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/team_theme_audio/DK43_Vannam Konda.mp3', 'assets/intro_images/DK43.png')">TEST</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/video/Tamil_grad.mp4')">Tamil Grads</button>
+    </div>
+
+    <div class="section-header">Entertaining Sounds</div>
+    <div class="soundboard-grid">
+        <button class="cue-button esound-button" onclick="sendCue(this, 'assets/e_sounds/apachi-apachi.mp3', 'assets/images/logo.jpg')">a-apachi</button>
+        <button class="cue-button esound-button" onclick="sendCue(this, 'assets/e_sounds/naa ready neenga ready ah.mp3', 'assets/images/logo.jpg')">Naa Ready</button>
+        <button class="cue-button esound-button" onclick="sendCue(this, 'assets/e_sounds/TR-dhin dhika.mp3', 'assets/images/logo.jpg')">TR-dhin dhika</button>
+        <button class="cue-button esound-button" onclick="sendCue(this, 'assets/e_sounds/V-badham_mix.mp3', 'assets/images/logo.jpg')">V-badham_mix</button>
+        <button class="cue-button esound-button" onclick="sendCue(this, 'assets/e_sounds/whistle_claps.wav', 'assets/images/logo.jpg')">whistle_claps</button>
+        <button class="cue-button esound-button" onclick="sendCue(this, 'assets/e_sounds/claps.wav', 'assets/images/logo.jpg')">claps</button>
+    </div>
+
+    <div class="section-header">Reusable Utility Cues</div>
+    <div class="soundboard-grid" id="reusable-cue-container">
+        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/ready.mp3', 'assets/reusable/image_1.jpg')">R_U_READY</button>
+        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/fahhh.mp3', 'assets/reusable/image_2.jpg')">FAHHH</button>
+        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/boosted_fahhh.wav', 'assets/reusable/image_3.jpg')">RE-CUE 3</button>
+        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/audio_4.mp3', 'assets/reusable/image_4.jpg')">RE-CUE 4</button>
+    </div>
+
+    <p style="text-align: center; color: #888; font-size: 0.8em; margin-top: 50px;">
+        &copy; 2025 Shyam Nainamalai. All Rights Reserved. Right-click and copy disabled.
+    </p>
+
+    <script>
+        let displayWindow = null; 
+
+        // Block Right Click with a message
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            showToast("Right-click is disabled for security.");
+        }, false);
+
+        // Block typical keyboard shortcuts for View Source / Inspect
+        document.addEventListener('keydown', function(e) {
+            // Disable Ctrl+U, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+                showToast("Source view is disabled.");
+            }
+            if (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I' || e.key === 'j' || e.key === 'J' || e.key === 'c' || e.key === 'C')) {
+                e.preventDefault();
+                showToast("Developer Tools are disabled.");
+            }
+            // Spacebar stop all
+            if (e.key === ' ') { 
+                stopAll();
+                e.preventDefault(); 
+            }
+            // Key B blackout
+            else if (e.key.toUpperCase() === 'B') {
+                blackout();
+            }
+        });
+
+        // Initialize board tracking
+        const originalCueTexts = {};
+        document.querySelectorAll('.cue-button').forEach(btn => {
+            const text = btn.innerText.trim().replace(/\[X\]\s*/, '');
+            originalCueTexts[text] = text;
+        });
+
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.innerText = message;
+            toast.className = "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+
+        function sendCue(buttonElement, audioFile, imageFile) {
+            if (!displayWindow || displayWindow.closed) {
+                showToast("Please open the Display Window first!");
+                return;
+            }
+
+            const isReusable = buttonElement.closest('#reusable-cue-container');
+            const cueName = buttonElement.innerText.trim().replace(/\[X\]\s*/, '');
+
+            if (buttonElement.classList.contains('used-cue')) {
+                if (!isReusable) {
+                    const confirmation = confirm(`Cue '${cueName}' has already been fired.\n\nOK to RE-FIRE?\nCancel to CLEAR.`);
+                    if (!confirmation) {
+                        resetCue(buttonElement);
+                        return;
+                    }
+                }
+            }
+
+            if (!isReusable && !buttonElement.classList.contains('used-cue')) {
+                buttonElement.classList.add('used-cue');
+                buttonElement.innerText = `[X] ${cueName}`;
+            }
+
+            const cueData = { audio: audioFile, image: imageFile };
+            displayWindow.postMessage(cueData, '*'); 
+            showToast(`Fired: ${cueName}`);
+        }
+
+        function resetCue(buttonElement) {
+            const cueText = buttonElement.innerText.trim().replace(/\[X\]\s*/, '');
+            buttonElement.classList.remove('used-cue');
+            const originalText = originalCueTexts[cueText] || cueText;
+            buttonElement.innerText = originalText;
+        }
+        
+        function resetAllCues() {
+            if (confirm("Reset ALL cues?")) {
+                document.querySelectorAll('.cue-button').forEach(btn => {
+                    if (btn.classList.contains('used-cue')) {
+                        resetCue(btn);
+                    }
+                });
+                showToast("All cues reset.");
+            }
+        }
+
+        function openDisplayWindow() {
+            if (displayWindow && !displayWindow.closed) {
+                displayWindow.focus();
+                return;
+            }
+            displayWindow = window.open('display.html', 'SoundboardDisplay', 'width=1280,height=720'); 
+            if (displayWindow) {
+                document.getElementById('open-button').textContent = "Display Window Ready";
+                showToast("Display Window Connected");
+            } else {
+                showToast("Popup blocked! Enable popups.");
+            }
+        }
+
+        function stopAll() {
+             if (displayWindow && !displayWindow.closed) {
+                displayWindow.postMessage({ stop: true }, '*'); 
+                showToast("Stopped all audio/video.");
+            }
+        }
+        
+        function blackout() {
+             if (displayWindow && !displayWindow.closed) {
+                displayWindow.postMessage({ blackout: true }, '*'); 
+                showToast("Blackout enabled.");
+            }
+        }
+    </script>
+</body>
+</html>
