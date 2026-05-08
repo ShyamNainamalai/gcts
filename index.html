@@ -47,6 +47,8 @@
         .meme-button { background-color: #800080; }
         .esound-button { background-color: #008080; }
         .ppt-button { background-color: #ff9800; } 
+        .meme1-button { background-color: #28a745; } 
+        .meme2-button { background-color: #0C11F0; } 
 
         /* Style for used cues */
         .used-cue {
@@ -133,16 +135,17 @@
     <div class="soundboard-grid">
         <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/.mp3', 'assets/images/QR.jpeg')">QR_CODE</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/video/GCTS_Intro.mp4')">GCTS_Intro</button>
-        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/video/Mothers_day.mp4')">Mother</button>
-        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/e_sounds/naaready_lawrence.mp3', 'assets/images/logo.jpg')">naready_lrnce</button>
-        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/e_sounds/annamalai_bgm.mp3', 'assets/images/logo.jpg')">CURTAIN1</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/video/mothers_day_gcts2.mp4')">Amma</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/bgms/Master-the-Blaster.wav', 'assets/images/logo.jpg')">Mohan_I</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/e_sounds/Dj_ready.mp3', 'assets/images/logo.jpg')">Dj_ready</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/e_sounds/Og_sambavam.wav', 'assets/images/logo.jpg')">CURTAIN1</button>
         <button class="cue-button meme-button" onclick="sendCue(this, 'assets/e_sounds/curtain_kaththi.mp3', 'assets/images/logo.jpg')">CURTAIN2</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/video/intro.mp4')">TIMER</button>
         <button class="cue-button meme-button" onclick="sendCue(this, 'assets/e_sounds/.mp3', 'assets/images/logo.jpg')">JUST_LOGO</button>
         <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/T_Thaai_Vaazhthu.mp3', 'assets/images/TTV.jpg')">T_Thaai_Vaazhthu</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/dj_meme/AK_missuall.mp3', 'assets/images/logo.jpg')">AK_missuall</button>
         <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/v_kootam.mp3', 'assets/images/logo.jpg')">V-kootam</button>
-        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/v-18patti.mp3', 'assets/images/logo.jpg')">v-18patti</button>
-        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/V-wind-up-vadivelu.mp3', 'assets/images/logo.jpg')">V-wind-up-vadivelu</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/dj_meme/J_mara.mp3', 'assets/images/logo.jpg')">J_mara</button>
     </div>
     
     <div class="section-header">Intro Video/Image Cues (1-43)</div>
@@ -153,71 +156,103 @@
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT04.mp4')">CT04</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT05.mp4')">CT05</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT06.mp4')">CT06</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT07.mp4')">CT07</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT08.mp4')">CT08</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT09.mp4')">CT09</button>
-        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT12.mp4')">CT12</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/team_theme_audio/CT10_murgar_bgm.mp3', 'assets/team_intro_videos/CT10.png')">CT10-NV</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/team_theme_audio/CT11_Malargal-Kaettaen.mp3', 'assets/team_intro_videos/CT11.png')">CT11-NV</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT12.mp4')">CT12-NV</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/team_theme_audio/CT13.wav', 'assets/team_intro_videos/CT13.png')">CT13-NV</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT14.mp4')">CT14</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT15.mp4')">CT15</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT16.mp4')">CT16</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/team_theme_audio/CT17.mp3', 'assets/team_intro_videos/CT17.png')">CT17-NV</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT18.mp4')">CT18</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT19.mp4')">CT19</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/team_theme_audio/CT21.wav', 'assets/team_intro_videos/CT21.png')">CT21-NV</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT22.mp4')">CT22</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT23.mp4')">CT23</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/team_theme_audio/CT24.wav', 'assets/team_intro_videos/CT24.png')">CT24-NV</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/team_theme_audio/CT25_alagu.mp3', 'assets/team_intro_videos/CT25.png')">CT25-NV</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT26.mp4')">CT26</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT27.mp4')">CT27</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT28.mp4')">CT28</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT29.mp4')">CT29</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT30.mp4')">CT30</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/team_theme_audio/CT31_en_veetu.mp3', 'assets/team_intro_videos/CT31.png')">CT31-NV</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/team_theme_audio/CT32_Kutti-Story.wav', 'assets/team_intro_videos/CT32.png')">CT32-NV</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/team_theme_audio/CT33_Thalathil-Western.mp3', 'assets/team_intro_videos/CT33.png')">CT33-NV</button>
         <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/team_intro_videos/CT34.mp4')">CT34</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/team_theme_audio/DK43_Vannam Konda.mp3', 'assets/intro_images/DK43.png')">TEST</button>
-        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/video/Tamil_grad.mp4')">Tamil School Grads</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/team_theme_audio/CT35.mp3', 'assets/team_intro_videos/CT35.png')">CT35-NV</button>
+       
+    </div>
+
+    <div class="section-header">Reusable Utility Cues (1-10)</div>
+    <div class="soundboard-grid" id="reusable-cue-container">
+        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/ready.mp3', 'assets/images/logo.jpg')">R_U_READY</button>
+        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/boosted_Ani_readyah mame.wav', 'assets/images/logo.jpg')">Ani-ready</button>
+        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/321.mp3', 'assets/images/logo.jpg')">321</button>
+        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/boosted_clap1.wav', 'assets/images/logo.jpg')">clap1</button>
+        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/boosted_clap2.wav', 'assets/images/logo.jpg')">clap2</button>
+        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/boosted_claps.wav', 'assets/images/logo.jpg')">claps</button>
+        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/boosted_whistle_claps.wav', 'assets/images/logo.jpg')">whistle_claps</button>
+        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/boosted_cheer_clap.wav', 'assets/images/logo.jpg')">cheer_clap.wav</button>
+        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/boosted_fahhh.wav', 'assets/images/logo.jpg')">fahhh</button>
+        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/audio_10.mp3', 'assets/images/logo.jpg')">RE-CUE 10</button>
     </div>
 
     <div class="section-header">Main Audio/Visual Cues (1-43)</div>
     <div class="soundboard-grid">
         <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT01.mp3', 'assets/intro_images/CT01.png')">CT01-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT02.mp3', 'assets/intro_images/CT02.jpeg')">CT02-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT03.mp3', 'assets/intro_images/CT03.jpg')">CT03-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT04.mp3', 'assets/intro_images/CT04.jpg')">CT04-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT05.mp3', 'assets/intro_images/CT05.jpeg')">CT05-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT06.mp3', 'assets/intro_images/CT06.jpeg')">CT06-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT07.mp3', 'assets/intro_images/CT07.JPG')">CT07-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT08.mp3', 'assets/intro_images/CT08.jpeg')">CT08-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT02.mp3', 'assets/intro_images/CT02.png')">CT02-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT03.mp3', 'assets/intro_images/CT03.png')">CT03-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT04.mp3', 'assets/intro_images/CT04.png')">CT04-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT05.mp3', 'assets/intro_images/CT05.png')">CT05-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT06.mp3', 'assets/intro_images/CT06.png')">CT06-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT07.mp3', 'assets/intro_images/CT07.png')">CT07-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT08.mp3', 'assets/intro_images/CT08.png')">CT08-M</button>
         <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT09.mp3', 'assets/intro_images/CT09.png')">CT09-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT10.mp3', 'assets/intro_images/CT10.jpeg')">CT10-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT11.mp3', 'assets/intro_images/CT11.JPG')">CT11-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT12.mp3', 'assets/intro_images/CT12.jpeg')">CT12-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT13.mp3', 'assets/intro_images/CT13.jpeg')">CT13-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT14.mp3', 'assets/intro_images/CT14.jpeg')">CT14-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT15.mp3', 'assets/intro_images/CT15.jpg')">CT15-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT16.mp3', 'assets/intro_images/CT16.JPG')">CT16-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT17.mp3', 'assets/intro_images/CT17.jpg')">CT17-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT18.mp3', 'assets/intro_images/CT18.jpeg')">CT18-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT19.mp3', 'assets/intro_images/CT19.jpg')">CT19-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT21.mp3', 'assets/intro_images/CT21.jpg')">CT21-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT22.mp3', 'assets/intro_images/CT22.jpeg')">CT22-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT23.mp3', 'assets/intro_images/CT23.jpg')">CT23-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT10.mp3', 'assets/intro_images/CT10.png')">CT10-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT11.mp3', 'assets/intro_images/CT11.png')">CT11-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT12.mp3', 'assets/intro_images/CT12.png')">CT12-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT13.mp3', 'assets/intro_images/CT13.png')">CT13-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT14.mp3', 'assets/intro_images/CT14.png')">CT14-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT15.mp3', 'assets/intro_images/CT15.png')">CT15-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT16.mp3', 'assets/intro_images/CT16.png')">CT16-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT17.mp3', 'assets/intro_images/CT17.png')">CT17-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT18.mp3', 'assets/intro_images/CT18.png')">CT18-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT19.mp3', 'assets/intro_images/CT19.png')">CT19-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT21.mp3', 'assets/intro_images/CT21.png')">CT21-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT22.mp3', 'assets/intro_images/CT22.png')">CT22-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT23.mp3', 'assets/intro_images/CT23.png')">CT23-M</button>
         <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT24.mp3', 'assets/intro_images/CT24.png')">CT24-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT25.mp3', 'assets/intro_images/CT25.jpg')">CT25-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT26.mp3', 'assets/intro_images/CT26.jpg')">CT26-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT27.mp3', 'assets/intro_images/CT27.JPG')">CT27-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT28.mp3', 'assets/intro_images/CT28.jpg')">CT28-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT29.mp3', 'assets/intro_images/CT29.jpeg')">CT29-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT30.mp3', 'assets/intro_images/CT30.jpg')">CT30-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT31.mp3', 'assets/intro_images/CT31.jpg')">CT31-M</button>        
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT32.mp3', 'assets/intro_images/CT32.jpg')">CT32-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT33.mp3', 'assets/intro_images/CT33.jpeg')">CT33-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/.mp3', 'assets/intro_images/CT34.jpeg')">CT34-M</button>
-        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/.mp3', 'assets/intro_images/CT35.jpg')">CT35-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT25.mp3', 'assets/intro_images/CT25.png')">CT25-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT26.mp3', 'assets/intro_images/CT26.png')">CT26-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT27.mp3', 'assets/intro_images/CT27.png')">CT27-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT28.mp3', 'assets/intro_images/CT28.png')">CT28-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT29.mp3', 'assets/intro_images/CT29.png')">CT29-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT30.mp3', 'assets/intro_images/CT30.png')">CT30-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT31.mp3', 'assets/intro_images/CT31.png')">CT31-M</button>        
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT32.mp3', 'assets/intro_images/CT32.png')">CT32-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/CT33.mp3', 'assets/intro_images/CT33.png')">CT33-M</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/.mp3', 'assets/intro_images/CT34.png')">CT34</button>
+        <button class="cue-button" onclick="sendCue(this, 'assets/performance_audio/.mp3', 'assets/intro_images/CT35.png')">CT35</button>
     </div>
 
     <div class="section-header">Planned Meme Sounds (Short Stings)</div>
     <div class="soundboard-grid">
+
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/v-chellamvandhutainga.mp3', 'assets/images/logo.jpg')">CT07</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/e_sounds/CT12.mp3', 'assets/images/logo.jpg')">CT12</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/e_sounds/arthi.mp3', 'assets/images/logo.jpg')">CT13</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/thatha_nigalchi.mp3', 'assets/images/logo.jpg')">CT29</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/vadivelu isai.mp3', 'assets/images/logo.jpg')">CT34</button>
+
         <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/kid pasikumla.mp3', 'assets/images/logo.jpg')">pasikumla</button>
-        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/magaprabhu.wav', 'assets/images/logo.jpg')">Prakash</button>
+        
         <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/punnairuku.mp3', 'assets/images/logo.jpg')">punnairuku</button>
         <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/sudhakar_comedy_venam.mp3', 'assets/images/logo.jpg')">sudha_venam.</button>
-        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/thatha_nigalchi.mp3', 'assets/images/logo.jpg')">thatha_nigalchi</button>
+        
         <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/v-adaimoli.mp3', 'assets/images/logo.jpg')">v-adaimoli</button>
         <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/v-isai.mp3', 'assets/images/logo.jpg')">v-isai</button>
         <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/vadivelu list perusa pogudhu.mp3', 'assets/images/logo.jpg')">v-listperusa</button>
@@ -230,6 +265,137 @@
         <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/V-tea-varala.mp3', 'assets/images/logo.jpg')">4:00 PM , V-tea-varala</button>
         <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/v-sorrydisturbance.mp3', 'assets/images/logo.jpg')">v-sorrydisturbance</button>
         <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/G-2peru_paratu.mp3', 'assets/images/logo.jpg')">self-2peru_paratu</button>
+    </div>
+
+    <div class="section-header">Meme Appreciation memes(Short Stings)</div>
+    <div class="soundboard-grid">
+        <button class="cue-button meme1-button" onclick="sendCue(this, 'assets/appreciations/boosted_kalamaster.wav', 'assets/images/logo.jpg')">kalamaster</button>
+        <button class="cue-button meme1-button" onclick="sendCue(this, 'assets/appreciations/boosted_mani_listlailla.wav', 'assets/images/logo.jpg')">mani_listlailla</button>
+        <button class="cue-button meme1-button" onclick="sendCue(this, 'assets/appreciations/boosted_Ajith_adengappa.wav', 'assets/images/logo.jpg')">Ajith_adengappa</button>
+        <button class="cue-button meme1-button" onclick="sendCue(this, 'assets/appreciations/boosted_bbaskar_veralevel.wav', 'assets/images/logo.jpg')">bbaskar</button>
+        <button class="cue-button meme1-button" onclick="sendCue(this, 'assets/appreciations/boosted_gsuperappu.wav', 'assets/images/logo.jpg')">gsuperappu</button>
+        <button class="cue-button meme1-button" onclick="sendCue(this, 'assets/appreciations/boosted_gv_veralevel.wav', 'assets/images/logo.jpg')">gv_veralevel</button>
+        <button class="cue-button meme1-button" onclick="sendCue(this, 'assets/appreciations/boosted_Praj_loveu.wav', 'assets/images/logo.jpg')">Praj_loveu</button>
+        <button class="cue-button meme1-button" onclick="sendCue(this, 'assets/appreciations/boosted_Rajini-aatam.wav', 'assets/images/logo.jpg')">Rajini-aatam</button>
+        <button class="cue-button meme1-button" onclick="sendCue(this, 'assets/appreciations/boosted_veramari.wav', 'assets/images/logo.jpg')">veramari</button>
+        <button class="cue-button meme1-button" onclick="sendCue(this, 'assets/appreciations/boosted_Vijay_sirapu.wav', 'assets/images/logo.jpg')">Vijay_sirapu</button>
+        <button class="cue-button meme1-button" onclick="sendCue(this, 'assets/appreciations/boosted_vijay-soli-adipen.wav', 'assets/images/logo.jpg')">vijay-soli-adipen</button>
+        <button class="cue-button meme1-button" onclick="sendCue(this, 'assets/appreciations/verithanam.mp3', 'assets/images/logo.jpg')">verithanam</button>
+        <button class="cue-button meme1-button" onclick="sendCue(this, 'assets/appreciations/Dhanush_enjami.mp3', 'assets/images/logo.jpg')">Dhanush_enjami</button>
+        <button class="cue-button meme1-button" onclick="sendCue(this, 'assets/appreciations/fast_music.mp3', 'assets/images/logo.jpg')">fast_music</button>
+        <button class="cue-button meme1-button" onclick="sendCue(this, 'assets/appreciations/', 'assets/images/logo.jpg')"></button>
+    </div>
+
+    <div class="section-header">BGMs</div>
+    <div class="soundboard-grid">
+        
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/bgms/Arasan-Theme.wav', 'assets/images/logo.jpg')">Arasan</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/bgms/billa_mainsong.wav', 'assets/images/logo.jpg')">billa</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/bgms/Coolie DISCO_mainsong.wav', 'assets/images/logo.jpg')">DISCO</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/bgms/Dahaa Theme_mainsong.wav', 'assets/images/logo.jpg')">ahaa </button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/bgms/Kaleesha_mainsong.wav', 'assets/images/logo.jpg')">Kaleesha</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/bgms/kgf_massdaa.mp3', 'assets/images/logo.jpg')">kgf_massdaa</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/bgms/Powerhouse x Disco.mp3', 'assets/images/logo.jpg')">Powerhouse</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/bgms/Ratata-MassTamilan.dev.mp3', 'assets/images/logo.jpg')">Ratata</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/bgms/Thiruppi-Kudukkum.wav', 'assets/images/logo.jpg')">thiruppi-Kudukkum</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/bgms/Vaathi-Coming.wav', 'assets/images/logo.jpg')">Vaathi-Coming</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/bgms/Vaathi-Raid-Mass.wav', 'assets/images/logo.jpg')">Vaathi-Raid</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/bgms/Veeraraghavan.wav', 'assets/images/logo.jpg')">Veeraraghavan</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/bgms/Veeraraghavan.wav', 'assets/images/logo.jpg')">Veeraraghavan</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/bgms/vijay_theme.wav', 'assets/images/logo.jpg')">vijay_theme</button>
+ 
+     </div>   
+
+    <div class="section-header">Filler Music</div>
+    <div class="soundboard-grid">
+        
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_music/boosted_flute1.wav', 'assets/images/logo.jpg')">flute1 </button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_music/boosted_flute2.wav', 'assets/images/logo.jpg')">flute2</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_music/boosted_flute3.wav', 'assets/images/logo.jpg')">flute3</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_music/boosted_flute4.wav', 'assets/images/logo.jpg')">flute4</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_music/boosted_flute5.wav', 'assets/images/logo.jpg')">flute5</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_music/boosted_kanthara_theme.wav', 'assets/images/logo.jpg')">kanthara_theme</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_music/boosted_r_hamsadhvani.wav', 'assets/images/logo.jpg')">r_hamsadhvani</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_music/boosted_r_mohana.wav', 'assets/images/logo.jpg')">r_mohana</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_music/boosted_r_navaragamalika.wav', 'assets/images/logo.jpg')">r_navaragamalika</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_music/boosted_r_shankara.wav', 'assets/images/logo.jpg')">r_shankara</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_music/boosted_r_sree.wav', 'assets/images/logo.jpg')">r_sree</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_music/boosted_tararara.wav', 'assets/images/logo.jpg')">tararara</button>
+        
+    </div>
+
+    <div class="section-header">Filler Songs</div>
+    <div class="soundboard-grid">
+        
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_songs/Chakku-Chakku-Vaththikuchi.wav', 'assets/images/logo.jpg')">Chakku-Chakku</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_songs/Enakkaaga.wav', 'assets/images/logo.jpg')">Enakkaaga</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_songs/Kadhalikum-Pennin.wav', 'assets/images/logo.jpg')">Kadhalikum-Penni</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_songs/Karu-Karu-Karupayi.wav', 'assets/images/logo.jpg')">Karu-Karu-Karupay</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_songs/Love Pannu.wav', 'assets/images/logo.jpg')">Love Pannu</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_songs/Manna-Madurai_mainsong.wav', 'assets/images/logo.jpg')">manna-Madurai</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_songs/Metro-Channel.wav', 'assets/images/logo.jpg')">etro-Channel</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_songs/Oodha-Color-Ribbon.wav', 'assets/images/logo.jpg')">Oodha-Color</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_songs/Ottagathai-Kattiko.wav', 'assets/images/logo.jpg')">Ottagathai-Kattiko</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_songs/Panju Mittai.wav', 'assets/images/logo.jpg')">anju Mittai</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_songs/Puthu-Rootulathan.wav', 'assets/images/logo.jpg')">Puthu-Rootulatha</button>
+        
+    </div>
+
+
+
+    <div class="section-header">Mothers wishes videos(Short Stings)</div>
+    <div class="soundboard-grid">
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/mothes_wishes/CT03.mp4')">M</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/mothes_wishes/CT04.mp4')">M</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/mothes_wishes/CT05.mp4')">M</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/mothes_wishes/CT06.mp4')">M</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/mothes_wishes/CT09.mp4')">M</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/mothes_wishes/CT18.mp4')">M</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/mothes_wishes/CT22.mp4')">M</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/mothes_wishes/CT23.mp4')">M</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/mothes_wishes/CT26.mp4')">M</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/mothes_wishes/CT27.mp4')">M</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/mothes_wishes/CT28.mp4')">M</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/mothes_wishes/CT29.mp4')">M</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/mothes_wishes/CT30.mp4')">M</button>
+        <button class="cue-button" style="background-color: #008080;" onclick="sendCue(this, '', 'assets/mothes_wishes/CT32.mp4')">M</button>
+  
+        
+    </div>
+
+    <div class="section-header">DJ self kalai memes(Short Stings)</div>
+    <div class="soundboard-grid">
+        <button class="cue-button meme2-button" onclick="sendCue(this, 'assets/dj_meme/enga_annan.mp3', 'assets/images/logo.jpg')">enga_annan</button>
+        <button class="cue-button meme2-button" onclick="sendCue(this, 'assets/dj_meme/v-alertaika.mp3', 'assets/images/logo.jpg')">alertaika</button>
+        <button class="cue-button meme2-button" onclick="sendCue(this, 'assets/dj_meme/v-sunapana.mp3', 'assets/images/logo.jpg')">sunapana</button>
+        <button class="cue-button meme2-button" onclick="sendCue(this, 'assets/dj_meme/v-sunapana_scourt.mp3', 'assets/images/logo.jpg')">sunapana_sourt</button>
+        <button class="cue-button meme2-button" onclick="sendCue(this, 'assets/dj_meme/v-usupethiranagalam.mp3', 'assets/images/logo.jpg')">usupethiranagalam</button>
+        <button class="cue-button meme2-button" onclick="sendCue(this, 'assets/dj_meme/v-varavanpoora.mp3', 'assets/images/logo.jpg')">varavanpoora</button>
+        <button class="cue-button meme2-button" onclick="sendCue(this, 'assets/dj_meme/v-vilayatapesunadhu.mp3', 'assets/images/logo.jpg')">vilayatapesunadhu</button>
+    </div>
+
+    <div class="section-header">Teachers(Short Stings)</div>
+    <div class="soundboard-grid">
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/teachers/senthil_raghavan.mp3', 'assets/images/logo.jpg')">senthil</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/v-teacher.mp3', 'assets/images/logo.jpg')">v-teacher</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/teachers/thalpathy_thalapathy.mp3', 'assets/images/logo.jpg')">thalpathy_thalapathy</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/teachers/va_thalaivi.mp3', 'assets/images/logo.jpg')">Vidhya</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/teachers/Vaathi-Coming-MassTamilan_bgm.wav', 'assets/images/logo.jpg')">Vaathi-Coming</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/teachers/vadi_rasathi_mainsong.wav', 'assets/images/logo.jpg')"></button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/teachers/Aaana-Aavanna.mp3', 'assets/images/logo.jpg')">Song_4_students</button>
+    </div>
+
+    <div class="section-header">Board(Short Stings)</div>
+    <div class="soundboard-grid">
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_songs/Aayiram-Jannal.wav', 'assets/images/logo.jpg')">Aayiram-Jannal</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/filler_songs/yaar enna sonalum.wav', 'assets/images/logo.jpg')">yaar enna sonalum</button>
+        <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/e_sounds/Engal Veetil Ella Naalum_mainsong.wav', 'assets/images/logo.jpg')">karthigai</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/e_sounds/musthafa.mp3', 'assets/images/logo.jpg')">musthafa</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/e_sounds/ram_mohan.mp3', 'assets/images/logo.jpg')">ram_mohan</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/e_sounds/ramc.mp3', 'assets/images/logo.jpg')">ramc</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/magaprabhu.wav', 'assets/images/logo.jpg')">Prakash</button>
+        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/v-ordermaradhiramaten.mp3', 'assets/images/logo.jpg')">ordera porenla</button>
+
     </div>
 
     <div class="section-header">Ramp Walk</div>
@@ -254,33 +420,8 @@
         <button class="cue-button bgm-button" onclick="sendCue(this, 'assets/mothersRamp/Sha La La.wav', 'assets/images/logo.jpg')">Shalala</button>
     </div>
 
-    <div class="section-header">Reusable Utility Cues (1-10)</div>
-    <div class="soundboard-grid" id="reusable-cue-container">
-        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/ready.mp3', 'assets/reusable/image_1.jpg')">R_U_READY</button>
-        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/fahhh.mp3', 'assets/reusable/image_2.jpg')">FAHHH</button>
-        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/boosted_fahhh.wav', 'assets/reusable/image_3.jpg')">RE-CUE 3</button>
-        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/audio_4.mp3', 'assets/reusable/image_4.jpg')">RE-CUE 4</button>
-        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/audio_5.mp3', 'assets/reusable/image_5.jpg')">RE-CUE 5</button>
-        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/audio_6.mp3', 'assets/reusable/image_6.jpg')">RE-CUE 6</button>
-        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/audio_7.mp3', 'assets/reusable/image_7.jpg')">RE-CUE 7</button>
-        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/audio_8.mp3', 'assets/reusable/image_8.jpg')">RE-CUE 8</button>
-        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/audio_9.mp3', 'assets/reusable/image_9.jpg')">RE-CUE 9</button>
-        <button class="cue-button ppt-button" onclick="sendCue(this, 'assets/reusable/audio_10.mp3', 'assets/reusable/image_10.jpg')">RE-CUE 10</button>
-    </div>
 
-    <div class="section-header">Dance Appreciations(Short Stings)</div>
-    <div class="soundboard-grid">
-        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/V-gv_veralevel.mp3', 'assets/images/logo.jpg')">gv_veralevel</button>
-        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/V-risk.mp3', 'assets/images/logo.jpg')">V-risk</button>
-        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/V-sinam_konda.mp3', 'assets/images/logo.jpg')">V-sinam_konda</button>
-        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/v-apt_order.mp3', 'assets/images/logo.jpg')">v-apt_order</button>
-        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/e_sounds/vijay-soli-adipen.mp3', 'assets/images/logo.jpg')">vijay-soli-adipen</button>
-        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/surya_kalugu.mp3', 'assets/images/logo.jpg')">surya_kalugu</button>
-        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/vijay_oruvati.mp3', 'assets/images/logo.jpg')">vijay_oruvati</button>
-        <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/kgf_yutham.mp3', 'assets/images/logo.jpg')">kgf_yutham</button>
-    </div>
-
-    <div class="section-header">Meme Sounds (Short Stings)</div>
+    <div class="section-header">Extras (Short Stings)</div>
     <div class="soundboard-grid">
         <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/G-saritharam.mp3', 'assets/images/logo.jpg')">G-saritharam</button>
         <button class="cue-button meme-button" onclick="sendCue(this, 'assets/meme_sounds/V-definetly.mp3', 'assets/images/logo.jpg')">V-definetly</button>
